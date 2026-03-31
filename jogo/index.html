@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Seu Futuro ❤️</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Evita zoom no double-tap e seleção indevida em botões */
+    button, label { touch-action: manipulation; -webkit-user-select: none; user-select: none; }
+    .ob, .bst, .pb, .bok, .fbtn, .mbtn { -webkit-user-select: none; user-select: none; }
+  </style>
+</head>
+<body>
+
+<div class="bg"></div>
+<audio id="ap" loop></audio>
+
+<!-- =============================================
+     TELA INICIAL
+     ============================================= -->
+<div id="tela-inicio">
+  <div class="logo">💬 <span>Seu</span> Futuro</div>
+  <p class="sub">Uma história interativa</p>
+
+  <!-- Preview do celular -->
+  <div class="phone">
+    <div class="pscr">
+      <div class="phdr">
+        <img src="foto.png" class="pav"
+             onerror="this.style.background='#e63946';this.removeAttribute('src')">
+        <div>
+          <div class="pnm">Seu Futuro ❤️</div>
+          <div class="pst">online agora</div>
+        </div>
+        <div class="pdot"></div>
+      </div>
+      <div class="pcht">
+        <div class="mb mi">Oi, podemos conversar lindinha? 🥺</div>
+        <div class="mb mo">Oi... 😊</div>
+        <div class="mb mi">Essa semana mudou algo em mim...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Upload opcional de música alternativa -->
+  <div class="mupl">
+    <div class="mlb">🎵 Música já incluída na pasta!<br><span style="font-size:.68rem;opacity:.7">Ou troque por outro arquivo abaixo</span></div>
+    <label class="mbtn" for="fi">♪ Usar outro arquivo MP3</label>
+    <input type="file" id="fi" accept="audio/*">
+    <div id="mn" style="color:rgba(255,180,180,.6);font-size:.7rem">musica.mp3 (padrão)</div>
+  </div>
+
+  <!-- Aviso de volume -->
+  <div class="sw">
+    <span style="font-size:1.2rem">🔊</span>
+    <div>Deixe o volume <strong>na metade</strong> antes de começar<br>para a melhor experiência! 🎵</div>
+  </div>
+
+  <button class="bst" onclick="iniciarJogo()">▶ Começar a História</button>
+</div>
+
+<!-- =============================================
+     TELA DO JOGO
+     ============================================= -->
+<div id="tela-jogo">
+  <div class="wac">
+
+    <!-- Header do chat -->
+    <div class="chdr">
+      <span class="cbk">←</span>
+      <div class="avw" id="avw">
+        <img src="foto.png" class="av" id="avj"
+             onerror="this.style.background='#e63946';this.removeAttribute('src')">
+        <div class="aon"></div>
+      </div>
+      <div class="cinfo">
+        <div class="cnm" id="cnm">Seu Futuro ❤️</div>
+        <div class="cst" id="cst">online</div>
+      </div>
+      <span style="color:rgba(255,220,220,.7);font-size:1.2rem;cursor:pointer">⋮</span>
+    </div>
+
+    <!-- Corpo do chat -->
+    <div class="cbdy" id="cb">
+      <div class="dt">Hoje</div>
+    </div>
+
+    <!-- Área de opções -->
+    <div class="oa" id="oa">
+      <div class="ol">Aguarde...</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- =============================================
+     TELA FINAL
+     ============================================= -->
+<div id="tela-final">
+
+  <!-- Parte principal: mensagem do Ademir -->
+  <div class="fc-main">
+    <div class="fh">❤️🌹❤️</div>
+    <div class="ftit">RAFAELA,<br>EU TE AMO MAIS DO QUE TUDO</div>
+    <div class="fsub">
+      Quero que sejamos felizes juntos.<br>
+      Obrigado por jogar — farei mais, ok? ❤️
+    </div>
+  </div>
+
+  <!-- Carta do Outro Ademir (com Goku Black) -->
+  <div class="carta-wrapper" id="carta-block" style="opacity:0">
+
+    <div class="carta-header">
+      <img src="goku-black.png" class="carta-goku" alt="Outro Ademir"
+           onerror="this.style.display='none'">
+      <div class="carta-from">
+        <div class="carta-from-title">✉️ Carta do Outro Ademir</div>
+        <div class="carta-from-sub">De: Universo Paralelo ∞</div>
+      </div>
+    </div>
+
+    <div class="carta-body">
+      <div class="carta-icon">💌</div>
+      <p class="carta-texto">
+        <strong>Rafa,</strong><br><br>
+        Eu não sou o teu Ademir e eu não te conheço, mas eu reconheço o quanto o Ademir dessa terra
+        acredita e ama você.<br><br>
+        Eu sou a realização que ele desejava para acreditar — e a gratidão por Deus ter feito você
+        aparecer na nossa vida. Tanto a minha Rafaela que eu amo, deseja que tudo melhore.<br><br>
+        Ele escreveu muitas coisas, não só mudando o que você pensaria — pq eu <em>não sou tua posse</em>.
+        Se você discorda da história, ele dirá: <strong>"vamos mudar juntos então, do jeito correto, princesa."</strong><br><br>
+        De onde eu venho, eu tentei me matar e ela me salvou. Não tenho gratidão como fonte —
+        tenho amor por ela. Assim como no ano passado você escreveu que na fase ruim ele esteve com você,
+        você <em>"de outra dimensão"</em> esteve comigo para me salvar.<br><br>
+        Obrigado.<br><br>
+        Deus sabe de todas as coisas — e ele vai te conquistar, dia após dia.
+        Ele vai ser seu marido, e você poderá dizer:<br>
+        <strong style="font-size:.95rem; color:#ffb3c1">"saudades do meu marido 💔"</strong>
+      </p>
+      <div class="carta-assinatura">— Ademir, de outro universo 🌌</div>
+    </div>
+
+  </div>
+
+  <button class="fbtn" onclick="location.reload()">↩ Jogar Novamente</button>
+</div>
+
+<!-- =============================================
+     MODAL DE VOLUME
+     ============================================= -->
+<div class="vm" id="vm" style="display:none">
+  <div class="vb">
+    <div class="ve">🔊</div>
+    <div class="vt">Ajuste o Volume!</div>
+    <div class="vtx">
+      Para a melhor experiência, deixe o volume <strong>na metade</strong>
+      — nem muito alto, nem muito baixo 🎵
+    </div>
+    <div class="vbar">
+      <span class="vi">🔈</span>
+      <div class="vtr" id="vtr">
+        <div class="vf" id="vf"></div>
+        <div class="vth" id="vth"></div>
+      </div>
+      <span class="vi">🔊</span>
+    </div>
+    <button class="bok" onclick="fecharModal()">Pronto, vamos lá! ✓</button>
+  </div>
+</div>
+
+<!-- =============================================
+     SCRIPTS — ORDEM IMPORTA
+     ============================================= -->
+<script src="roteiro.js"></script>
+<script src="engine.js"></script>
+<script src="final.js"></script>
+
+</body>
+</html>

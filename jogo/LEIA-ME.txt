@@ -1,0 +1,88 @@
+# 💬 Seu Futuro — Jogo Interativo
+## Instruções para usar
+
+### 📁 Estrutura de arquivos
+```
+📂 seu-futuro/
+├── index.html       ← Abra este arquivo no navegador
+├── style.css        ← Visual e cores (edite aqui para mudar as cores)
+├── roteiro.js       ← Toda a história (edite aqui para mudar as mensagens)
+├── engine.js        ← Motor do jogo (não precisa mexer)
+├── final.js         ← Tela final (não precisa mexer)
+├── foto.png         ← ⚠️ COLOQUE SUA FOTO AQUI com esse nome exato
+└── goku-black.png   ← Personagem do Outro Ademir (já incluído)
+```
+
+---
+
+### 🎵 Sobre a Música
+O site **NÃO consegue** tocar músicas do YouTube diretamente (bloqueio de direitos autorais).
+Você precisa adicionar o arquivo MP3 da música manualmente:
+
+**Como fazer:**
+1. Baixe a música "Turning Page" em MP3 (pesquise no YouTube converter ou use uma versão que você tenha)
+2. Você pode **arrastar qualquer MP3** diretamente no botão de upload na tela inicial
+3. O botão de "Começar" só funciona APÓS carregar a música — é obrigatório!
+
+---
+
+### 🖼️ Como colocar sua foto
+1. Pegue a sua foto (qualquer formato: jpg, png, webp)
+2. Renomeie ela para: **`foto.png`**
+3. Coloque na mesma pasta que o `index.html`
+
+---
+
+### ✏️ Como editar a história (roteiro.js)
+Abra o `roteiro.js` em qualquer editor de texto (Bloco de Notas, VSCode etc.)
+
+Cada cena é um objeto assim:
+```js
+{ id: 1, tipo: 'in', msg: 'Mensagem do Ademir aqui', d: 1200, prox: 2 }
+```
+- **id** = número da cena (não repita!)
+- **tipo** = `'in'` (Ademir fala) ou `'out'` (Rafaela fala)
+- **msg** = texto da mensagem
+- **d** = delay em milissegundos antes de aparecer (1000 = 1 segundo)
+- **prox** = id da próxima cena
+
+Para adicionar opções da Rafaela:
+```js
+{
+  id: 33, esp: 'raf', d: 800,
+  ops: [
+    { t: 'Resposta correta aqui',  ok: true,  prox: 34 },
+    { t: 'Resposta errada A',      ok: false, prox: 34 },
+    { t: 'Resposta errada B',      ok: false, prox: 34 }
+  ]
+}
+```
+
+---
+
+### 🎨 Como mudar as cores (style.css)
+No topo do `style.css`, edite as variáveis:
+```css
+:root {
+  --red:      #e63946;   /* Cor principal */
+  --red-dark: #9b1d24;   /* Cor escura */
+  --red-mid:  #c1121f;   /* Cor média */
+  --wa-bg:    #f5e6e6;   /* Fundo do chat */
+}
+```
+
+---
+
+### 🚀 Como abrir o jogo
+1. Coloque todos os arquivos na mesma pasta
+2. Adicione `foto.png` na pasta
+3. Clique duas vezes no `index.html` para abrir no navegador
+4. Para jogar no celular: use um aplicativo como "Simple HTTP Server" ou publique no Netlify
+
+---
+
+### 💡 Dica para a música
+Se você quiser que a música comece automaticamente (sem upload), adicione o arquivo MP3 na pasta com o nome `musica.mp3` e descomente essa linha no `engine.js`:
+```js
+// audio.src = 'musica.mp3';
+```
